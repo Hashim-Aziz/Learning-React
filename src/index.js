@@ -1,17 +1,43 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDom from "react-dom";
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+//JSX rules
+//single return element
+//close every element
+// use camel case for html attributes
+//className instead of class
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+// function Greeting() {
+//   return (
+//     <div>
+//       <h1>Hello World</h1>
+//     </div>
+//   );
+// }
+
+// const Greeting = () => {
+//   return React.createElement(
+//     "div",
+//     {},
+//     React.createElement("h1", {}, "hello world from arrow function jsx")
+//   );
+// };
+
+// nested components
+
+function Greeting() {
+  return (
+    <div>
+      <Person />
+      <Message />
+    </div>
+  );
+}
+
+const Person = () => <h1>Hashim Aziz</h1>;
+
+const Message = () => {
+  return <p>This is my Message</p>;
+};
+
+ReactDom.render(<Greeting />, document.getElementById("root"));
